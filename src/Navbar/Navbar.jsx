@@ -14,7 +14,7 @@ import { CgMenuGridR } from "react-icons/cg";
 import { FaSquare } from "react-icons/fa6";
 
 // importing Routes and Route 
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route, NavLink} from 'react-router-dom'
 //all the components
 import Home from '../Componets/Home';
 import Network from '../Componets/Network';
@@ -35,48 +35,48 @@ const Navbar = () => {
             <img src={logo} alt="logo" className='w-10'/>
             <FaMagnifyingGlass />
 
-            {/* all links */}
+            {/* all NavLinks */}
             <ul className='flex gap-6 md:gap-10'>
               <li>
-                <Link to="/"> 
+                <NavLink to="/" className={({isActive}) => isActive ? 'border-b-2 border-black flex items-center transition-all duration-200 ease-in-out'  : 'text-gray-600'}> 
                   <IoHome />
-                </Link> 
+                </NavLink> 
               </li>
 
               <li>
-                <Link to="/network"> 
+                <NavLink to="/network" className={({isActive}) => isActive ? 'border-b-2 border-black flex items-center transition-all duration-200 ease-in-out'  : 'text-gray-600'}> 
                   <BsFillPeopleFill /> 
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link to="/jobs"> 
+                <NavLink to="/jobs" className={({isActive}) => isActive ? 'underline border-b-2 border-black flex items-center transition-all duration-200 ease-in-out'  : 'text-gray-500'}> 
                   <IoBagHandleSharp /> 
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link to="/messages"> 
+                <NavLink to="/messages" className={({isActive}) => isActive ? 'underline border-b-2 border-black flex items-center transition-all duration-200 ease-in-out'  : 'text-gray-500'}> 
                   <AiFillMessage /> 
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link to="/notification"> 
+                <NavLink to="/notification" className={({isActive}) => isActive ? 'underline border-b-2 border-black flex items-center transition-all duration-200 linear'  : 'text-gray-500'}> 
                   <FaBell /> 
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link to="/profile">
+                <NavLink to="/profile" className={({isActive}) => isActive ? 'underline border-b-2 border-black flex items-center transition-all duration-200 ease-in-out'  : 'text-gray-500'}>
                   <img src={pp} alt="profile picture" className='w-6 h-6 rounded-full object-cover'/>
-                </Link>
+                </NavLink>
               </li>
 
-              <li className='md:hidden'>
-                <Link to="/more"> 
+              <li className='md:hidden' >
+                <NavLink to="/more" className={({isActive}) => isActive ? 'underline border-b-2 border-black flex items-center'  : 'text-gray-500'}> 
                   <FaEllipsisH /> 
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <p className='hidden md:flex font-thin'>|</p>
