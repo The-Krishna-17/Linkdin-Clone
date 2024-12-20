@@ -40,9 +40,9 @@ const Jobs = () => {
         </div>
       </div>
       {/* all content for that will display in the md screen  */}
-      <div className='md:grid grid-cols-3 gap-6 md:py-8 md:px-20'>
+      <div className='md:grid md:grid-cols-3 lg:grid-cols-9 gap-6 md:py-8 md:px-20 lg:px-24'>
         {/* content that is going to display at left  */}
-        <div className='col-span-1'>
+        <div className='md:col-span-1 lg:col-span-2'>
           {/* header section for md screen */}
             <div className='hidden md:block space-y-4 p-3 bg-white border border-slate-300 text-slate-700 font-semibold rounded-xl'>
               <p className='flex gap-3'><AiOutlineBars className='text-2xl'/>Preferences</p>
@@ -52,7 +52,7 @@ const Jobs = () => {
             <button className='md:flex gap-1 px-4 py-2 border shadow-sm shadow-blue-600 border-blue-600 rounded-full text-blue-600 items-center font-semibold mt-3 hidden'><FaRegPenToSquare />Starting hiring with AI</button>
         </div>
         {/* content that is going to display at right  */}
-      <div className='col-span-2'>
+      <div className='md:col-span-2 lg:col-span-4'>
           {/* recent job searches */}
         <div className='flex flex-col gap-3 bg-white mt-5 md:mt-0 p-3 border border-slate-300 md:rounded-xl'>
           <div className='flex justify-between'>
@@ -134,7 +134,7 @@ const Jobs = () => {
         </div>
     
         {/* Job seeker section  */}
-        <div className='bg-white border border-slate-300 p-4 md:rounded-xl'>
+        <div className='bg-white border border-slate-300 p-4 md:rounded-xl lg:hidden'>
           <div>
             <h2 className='text-lg font-semibold'>Job seeker guidance</h2>
             <p className='text-xs text-slate-800'>Recommended based on your activity</p>
@@ -150,11 +150,11 @@ const Jobs = () => {
         </div>
 
         {/* footer image  */}
-        <div className=' flex justify-center bg-white mt-4 border border-slate-300 md:rounded-xl'>
+        <div className=' flex justify-center bg-white mt-4 border border-slate-300 md:rounded-xl lg:hidden'>
               <img src={footerImg} alt="image" />
         </div>
         {/* footer  */}
-        <div className='flex flex-col gap-3 mb-4 '>
+        <div className='flex flex-col gap-3 mb-4 lg:hidden'>
           <div className='flex flex-wrap justify-center gap-3 text-xs px-8 py-3 text-slate-600'>
             <p>About</p>
             <p>Accessibility</p>
@@ -171,6 +171,42 @@ const Jobs = () => {
           </div>
         </div>
         </div>
+        {/* the content which is going to display at the right side of the page  */}
+        <aside className='hidden lg:block lg:col-span-3'>
+          <div className='bg-white border border-slate-300 p-4 md:rounded-xl'>
+            <div>
+              <h2 className='text-lg font-semibold'>Job seeker guidance</h2>
+              <p className='text-xs text-slate-800'>Recommended based on your activity</p>
+            </div>
+            <div className='flex my-3 justify-between items-center shadow-sm shadow-slate-200 p-1'>
+              <h2 className='font-semibold text-sm'>I want to improve my resume</h2>
+              <img src={resume} alt="" />
+            </div>
+            <div>
+              <p className='text-sm'>Explore our curated guide of expert-led courses, such as how to improve your resume and grow your network, to help you land your next opportunity.</p>
+            </div>
+            <button className='text-purple-400 font-semibold flex items-center gap-2 my-3'>Show more <FaArrowRight /></button>
+          </div>
+          <div className=' flex justify-center bg-white mt-4 border border-slate-300 md:rounded-xl '>
+              <img src={footerImg} alt="image" />
+          </div>
+          <div className='flex flex-col gap-3 mb-4'>
+            <div className='flex flex-wrap justify-center gap-3 text-xs px-8 py-3 text-slate-600'>
+              <p>About</p>
+              <p>Accessibility</p>
+              <p>Help Center</p>
+              <p className="flex items-center gap-1">Privacy & Terms <FaCaretDown /></p>
+              <p>Ad Choices</p>
+              <p>Advertising</p>
+              <p className="flex items-center gap-1">Business Services <FaCaretDown /></p>
+              <p>Get the LinkedIn app</p>
+              <p>More</p>
+            </div>
+            <div className='flex gap-2 items-center justify-center mb-3'>
+              <p className='font-bold text-blue-600 flex items-center text-sm'>Linked<img src={footerLogo} alt="logo" className='h-4'/> </p><p className='text-xs'>Linkedin Corporation © 2024</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </>
   )
