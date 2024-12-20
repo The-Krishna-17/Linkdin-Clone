@@ -24,22 +24,23 @@ import { FaBookmark } from "react-icons/fa6";
 import { IoMdAdd } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 
-
-
 //importing footer image
 import footerImg from '../assets/footer image.png'
 import footerLogo from '../assets/logo.png'
 //other images
 import bgImg from '../assets/bg-img.jpeg'
 import pp from '../assets/pp.jpg'
+import IS from '../assets/IS.png'
+import w3School from '../assets/w3School.jpeg'
+import paudel from '../assets/paudel.jpg'
 
 const Home = () => {
   return (
     <>
     {/* main div whole content in this div  */}
-    <div className='md:p-8 md:grid md:grid-cols-3 gap-6 '>
+    <div className='md:p-8 lg:px-12 grid md:grid-cols-3 lg:grid-cols-6 gap-6 '>
       {/* aside (content i.e. going to display at left on md screen) profile for medium screen */}
-      <aside className=' hidden md:block md:col-span-1 '>
+      <aside className=' hidden md:block md:col-span-1'>
         <div className='bg-white p-4 rounded-xl border border-slate-300'>
           <div className='relative w-full h-auto'>
             <img src={bgImg} alt=""/>
@@ -75,7 +76,7 @@ const Home = () => {
       </aside>
       
       {/* all the content for sm screen only */}
-      <div className='md:col-span-2'>
+      <div className='md:col-span-2 lg:col-span-3'>
         {/* header  */}
         <header className='bg-white border border-slate-300 md:rounded-xl'>
           {/* image and start a post div  */}
@@ -169,7 +170,7 @@ const Home = () => {
           <button className='w-[90%] border-2 border-slate-700 p-1 rounded-full font-semibold text-slate-700'>Show more feed upadates</button>
         </div>
         {/* add to your feed section  */}
-        <div className='bg-white mb-4 border border-slate-300 md:rounded-xl'>
+        <div className='bg-white mb-4 border border-slate-300 md:rounded-xl lg:hidden'>
           <div className='flex items-center justify-between p-4 '>
             <h2 className='font-semibold text-slate-700'>Add to your feed</h2>
             <BsExclamationSquareFill />
@@ -187,6 +188,60 @@ const Home = () => {
           ))}
           <p className='flex items-center px-3 pb-3 gap-2 text-sm font-semibold text-slate-700'>View all recommendations <FaArrowRightLong /></p>
         </div>
+        {/* footer image  */}
+        <div className=' flex justify-center bg-white mt-1 border border-slate-300 md:rounded-xl lg:hidden'>
+          <img src={footerImg} alt="image" />
+        </div>
+        {/* footer  */}
+        <div className='flex flex-col gap-3 mb-4 lg:hidden'>
+          <div className='flex flex-wrap justify-center gap-3 text-xs px-8 py-3 text-slate-600'>
+            <p>About</p>
+            <p>Accessibility</p>
+            <p>Help Center</p>
+            <p className="flex items-center gap-1">Privacy & Terms <FaCaretDown /></p>
+            <p>Ad Choices</p>
+            <p>Advertising</p>
+            <p className="flex items-center gap-1">Business Services <FaCaretDown /></p>
+            <p>Get the LinkedIn app</p>
+            <p>More</p>
+          </div>
+          <div className='flex gap-2 items-center justify-center mb-3'>
+            <p className='font-bold text-blue-600 flex items-center text-sm'>Linked<img src={footerLogo} alt="logo" className='h-4'/> </p><p className='text-xs'>Linkedin Corporation © 2024</p>
+          </div>
+        </div>
+     </div>
+      {/* content that is going to be displayed at right side of the home page */}
+      <aside className='hidden lg:block col-span-2'>
+      {/* add to your feed */}
+      <div className='bg-white p-4 space-y-4 rounded-xl col-span-2'>
+          <h2 className='flex items-center justify-between font-semibold'>Add to your feed <BsExclamationSquareFill /></h2>
+          <div className='flex gap-2'>
+            <img src={IS} alt="" className='h-12 w-12 rounded-full object-cover'/>
+            <div>
+              <h2 className='font-semibold text-sm'>InterSathi - Internships in Nepal</h2>
+              <p className='text-xs text-slate-700'>Company . Human Resources Services</p>
+              <button className='flex items-center gap-2 font-bold border border-slate-700 py-1 px-3 rounded-full shadow-sm shadow-slate-400 mt-3'><FaPlus />Follow</button>
+            </div>
+          </div>
+          <div className='flex gap-1'>
+            <img src={paudel} alt="" className='h-12 w-12 rounded-full object-cover'/>
+            <div>
+              <h2 className='font-semibold text-sm'>Bishworaj Poudel</h2>
+              <p className='text-xs text-slate-700'>Contetnt Creator || 279K+ Subscribers ||</p>
+              <p className='text-xs text-slate-700'>100K+ App Downloads</p>
+              <button className='flex items-center gap-2 font-bold border border-slate-700 py-1 px-3 rounded-full shadow-sm shadow-slate-400 mt-3'><FaPlus />Follow</button>
+            </div>
+          </div>
+          <div className='flex gap-1'>
+            <img src={w3School} alt="" className='h-12 w-12 rounded-full object-cover'/>
+            <div>
+              <h2 className='font-semibold'>W3Schools.com</h2>
+              <p className='text-xs text-slate-700'>Company . E-learning Providers</p>
+              <button className='flex items-center gap-2 font-bold border border-slate-700 py-1 px-3 rounded-full shadow-sm shadow-slate-400 mt-3'><FaPlus />Follow</button>
+            </div>
+          </div>
+          <button className='flex items-center gap-4 text-slate-600 font-semibold'>View all recomendations <FaArrowRightLong /></button>
+      </div>
         {/* footer image  */}
         <div className=' flex justify-center bg-white mt-1 border border-slate-300 md:rounded-xl'>
           <img src={footerImg} alt="image" />
@@ -208,34 +263,6 @@ const Home = () => {
             <p className='font-bold text-blue-600 flex items-center text-sm'>Linked<img src={footerLogo} alt="logo" className='h-4'/> </p><p className='text-xs'>Linkedin Corporation © 2024</p>
           </div>
         </div>
-     </div>
-     {/* content that is going to be displayed at right side of the home page */}
-     <aside className=''>
-      {/* add to your feed */}
-      <div className='bg-white'>
-          <h2 className='flex items-center justify-between'>Add to your feed <BsExclamationSquareFill /></h2>
-          <div>
-            <img src="" alt="" />
-            <h2>InterSathi - Internships in Nepal</h2>
-            <p>Company . Human Resources Services</p>
-            <button>Follow</button>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h2>Bishworaj Poudel</h2>
-            <p>Contetnt Creator || 279K+ Subscribers ||</p>
-            <p>100K+ App Downloads</p>
-            <button>Follow</button>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h2>W3Schools.com</h2>
-            <p>Company . E-learning Providers</p>
-            <button><FaPlus />Follow</button>
-            <p></p>
-          </div>
-          <button></button>
-      </div>
      </aside>
     </div>
     </>
