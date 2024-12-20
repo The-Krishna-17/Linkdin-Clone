@@ -243,7 +243,7 @@ const Home = () => {
           <button className='flex items-center gap-4 text-slate-600 font-semibold'>View all recomendations <FaArrowRightLong /></button>
       </div>
         {/* footer image  */}
-        <div className=' flex justify-center bg-white mt-1 border border-slate-300 md:rounded-xl'>
+        <div className=' flex justify-center bg-white mt-1 border border-slate-300 md:rounded-xl lg:mt-6'>
           <img src={footerImg} alt="image" />
         </div>
         {/* footer  */}
