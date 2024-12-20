@@ -32,7 +32,7 @@ const Navbar = () => {
         <nav className='flex max-w-full items-center text-2xl justify-evenly md:justify-between bg-white border border-slate-300 p-2 md:px-5 sticky z-10 top-0'>
 
             {/* logo & search icon here */}
-            <img src={logo} alt="logo" className='w-10'/>
+            <img src={logo} alt="logo" className='w-8'/>
             <FaMagnifyingGlass />
 
             {/* all NavLinks */}
