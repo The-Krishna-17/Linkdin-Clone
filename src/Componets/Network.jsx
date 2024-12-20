@@ -23,6 +23,7 @@ import s2 from '../assets/s2.png'
 import ps1 from '../assets/ps1.jpg'
 import ps2 from '../assets/ps2.avif'
 import ps3 from '../assets/ps3.jpg'
+import s3 from '../assets/pinpoint.png'
 
 
 //importing connets.jsx
@@ -33,7 +34,7 @@ const Network = () => {
   return (
     <>
     {/* all the content here */}
-    <div className='md:grid grid-cols-[2fr_2.5fr]  md:p-6 gap-8'>
+    <div className='md:grid grid-cols-[2fr_2.5fr] lg:grid-cols-[1.8fr_4fr]  md:p-6 lg:px-[5rem] gap-8'>
       {/* content that is displayed in left  */}
       <div>
         <div className='bg-white border-slate-300 my-4 md:my-0 p-6 border md:rounded-xl md:mb-6'>
@@ -98,6 +99,14 @@ const Network = () => {
               <div>
                 <h2 className='font-semibold'>Tango <span>#71</span></h2>
                 <p className='text-xs text-slate-700'>Tuesday, Dec 17</p>
+              </div>
+              <button className='border-2 font-semibold border-blue-600 py-1 px-3 text-blue-700 rounded-full'>Play</button>
+            </div>
+            <div className=' gap-3 items-center hidden lg:flex'>
+              <img src={s3} alt="" className='w-10'/>
+              <div>
+                <h2 className='font-semibold'>PinPoint <span>#233</span></h2>
+                <p className='text-xs text-slate-700'>Tuesday, Dec 19</p>
               </div>
               <button className='border-2 font-semibold border-blue-600 py-1 px-3 text-blue-700 rounded-full'>Play</button>
             </div>
