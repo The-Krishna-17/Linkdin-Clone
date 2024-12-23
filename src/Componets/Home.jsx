@@ -42,12 +42,12 @@ const Home = () => {
         {/* aside (content i.e. going to display at left on md screen) profile for medium screen */}
         <aside className=" hidden md:block md:col-span-1">
           <div className="bg-white p-4 rounded-xl border border-slate-300">
-            <div className="relative w-full h-auto">
-              <img src={bgImg} alt="" />
+          <div className="relative w-full h-auto">
+              <img src={bgImg} alt="Background" className="w-full h-auto" />
               <img
                 src={pp}
-                alt=""
-                class="w-16 h-16 rounded-full object-cover absolute top-5 left-14 border-2 border-white"
+                alt="Profile Picture"
+                className="w-16 h-16 rounded-full object-cover absolute top-1/3 left-1/2 transform -translate-x-1/2 border-2 border-white shadow-lg"
               />
             </div>
             <div className="flex flex-col items-center mt-[4.5rem]">
