@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // importing lindin logo & pp
 import logo from "../assets/logo.png";
 import pp from "../assets/pp.jpg";
@@ -25,16 +25,27 @@ import More from "../Componets/More";
 import Profile from "../Componets/Profile";
 
 const Navbar = () => {
+  const [showSearch, setShowSearch] = useState(false);
   return (
     <>
       {/* declaring navigation bar */}
       <nav className="flex max-w-full items-center text-2xl justify-evenly md:justify-between bg-white border border-slate-300 p-2 md:px-5 sticky z-10 top-0">
         {/* logo & search icon here */}
-        <NavLink to="/">
-          <img src={logo} alt="logo" className="w-8" />
-        </NavLink>
 
-        <FaMagnifyingGlass />
+        <NavLink to="/">
+          <img src={logo} alt="logo" className="w-9 h-auto" />
+        </NavLink>
+        {/* search button */}
+        {showSearch ? (
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border p-1 rounded-md  max-w-xs ml-4 h-9 text-xl"
+            onBlur={() => setShowSearch(false)}
+          />
+        ) : (
+          <FaMagnifyingGlass onClick={() => setShowSearch(true)} />
+        )}
 
         {/* all NavLinks */}
         <ul className="flex gap-6 md:gap-10">
@@ -47,7 +58,11 @@ const Navbar = () => {
                   : "text-gray-600"
               }
             >
-              <IoHome />
+              {showSearch ? (
+                <IoHome className="hidden lg:flex" />
+              ) : (
+                <IoHome className="flex" />
+              )}
             </NavLink>
           </li>
 
@@ -60,7 +75,11 @@ const Navbar = () => {
                   : "text-gray-600"
               }
             >
-              <BsFillPeopleFill />
+              {showSearch ? (
+                <BsFillPeopleFill className="hidden lg:flex" />
+              ) : (
+                <BsFillPeopleFill className="flex" />
+              )}
             </NavLink>
           </li>
 
@@ -73,7 +92,11 @@ const Navbar = () => {
                   : "text-gray-500"
               }
             >
-              <IoBagHandleSharp />
+              {showSearch ? (
+                <IoBagHandleSharp className="hidden lg:flex" />
+              ) : (
+                <IoBagHandleSharp className="flex" />
+              )}
             </NavLink>
           </li>
 
@@ -86,7 +109,11 @@ const Navbar = () => {
                   : "text-gray-500"
               }
             >
-              <AiFillMessage />
+              {showSearch ? (
+                <AiFillMessage className="hidden lg:flex" />
+              ) : (
+                <AiFillMessage className="flex" />
+              )}
             </NavLink>
           </li>
 
@@ -99,7 +126,11 @@ const Navbar = () => {
                   : "text-gray-500"
               }
             >
-              <FaBell />
+              {showSearch ? (
+                <FaBell className="hidden lg:flex" />
+              ) : (
+                <FaBell className="flex" />
+              )}
             </NavLink>
           </li>
 
@@ -112,11 +143,19 @@ const Navbar = () => {
                   : "text-gray-500"
               }
             >
-              <img
-                src={pp}
-                alt="profile picture"
-                className="w-6 h-6 rounded-full object-cover"
-              />
+              {showSearch ? (
+                <img
+                  src={pp}
+                  alt="profile picture"
+                  className="w-6 h-6 rounded-full object-cover hidden lg:flex"
+                />
+              ) : (
+                <img
+                  src={pp}
+                  alt="profile picture"
+                  className="w-6 h-6 rounded-full object-cover flex"
+                />
+              )}
             </NavLink>
           </li>
 
@@ -129,7 +168,11 @@ const Navbar = () => {
                   : "text-gray-500"
               }
             >
-              <FaEllipsisH />
+              {showSearch ? (
+                <FaEllipsisH className="hidden lg:flex" />
+              ) : (
+                <FaEllipsisH className="flex" />
+              )}
             </NavLink>
           </li>
         </ul>
