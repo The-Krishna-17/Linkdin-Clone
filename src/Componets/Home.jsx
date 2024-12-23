@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <>
       {/* main div whole content in this div  */}
-      <div className="md:p-8 lg:px-12 grid md:grid-cols-3 lg:grid-cols-[1.5fr,2.5fr,1fr,2fr] gap-6 ">
+      <div className="md:p-8 lg:px-12 grid md:grid-cols-3 lg:grid-cols-[1.7fr,2.5fr,1fr,2fr] gap-6 ">
         {/* aside (content i.e. going to display at left on md screen) profile for medium screen */}
         <aside className=" hidden md:block md:col-span-1">
           <div className="bg-white p-4 rounded-xl border border-slate-300">
